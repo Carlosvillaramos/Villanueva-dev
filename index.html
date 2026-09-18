@@ -321,6 +321,99 @@
     <p><strong><em>Fuente: Phil Gerity, Microsoft (Blog de Windows)</em></strong></p>
 </article>
 
+
+<article class="blog-card">
+    <div class="autor">
+        <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva Ramos escribiendo" class="autor-foto">
+        <div>
+            <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+            <p class="autor-fecha">📅 18 de septiembre 2026</p>
+        </div>
+    </div>
+    <h3>🤖 Proyectos en Claude Code: cuando programar en paralelo deja de ser tu trabajo</h3>
+    <img src="Anthropic-Claude-Code.jpg" alt="Anthropic Claude Code" class="blog-img">
+    <p>Cualquiera que haya manejado varias tareas de programación al mismo tiempo sabe lo que cuesta: acordarte en qué iba cada una, repetir el mismo contexto cada vez que abrís una sesión nueva, y andar revisando manualmente cuál ya terminó y cuál sigue esperando una respuesta tuya.</p>
+    <p>La documentación de Claude Code plantea que esa coordinación manual es justamente lo que la nueva función de "Proyectos" busca quitarte de encima.</p>
+    <p>La idea de fondo es que Claude deje de ser solo quien ejecuta una tarea, y pase a ser quien coordina varias. En vez de que vos abras una sesión por cada pendiente, le pegás todo —un reporte de errores, una lista de tareas, una idea suelta— a una sola conversación, y Claude decide qué se convierte en un "hilo" (una sesión en la nube independiente) y qué hilo ya existente debe encargarse de eso.</p>
+    <p>La documentación señala varios puntos donde esto cambia la forma de trabajar:</p>
+    <p>Contexto compartido desde el inicio: cada hilo nuevo arranca ya con los repositorios, instrucciones y memoria del proyecto, así que una regla que decís una sola vez (por ejemplo, a qué rama apuntar) llega automáticamente a todo el trabajo futuro.</p>
+    <p>Trabajo en paralelo real: los hilos corren simultáneamente y siguen activos incluso si cerrás la laptop, y podés revisarlos y responderles desde el celular.</p>
+    <p>Un panel de control central: la pestaña "Resumen" muestra de un vistazo qué hilos están listos para revisar, cuáles esperan tu aprobación y cuáles siguen trabajando, sin que tengas que entrar a cada uno.</p>
+    <p>Memoria que persiste: cuando le pedís a Claude que recuerde una decisión o un problema, esa nota queda guardada y los hilos siguientes ya la conocen, sin que tengas que repetirla.</p>
+    <p>Vos seguís al mando de lo importante: podés pedirle a Claude que proponga los hilos antes de arrancarlos y espere tu aprobación, que no abra una solicitud de extracción sin que vos veas el plan antes, o que limite cuántos hilos corren a la vez.</p>
+    <p>La documentación aclara algo importante: un proyecto no es para cualquier tarea.</p>
+    <p>Si el trabajo cabe en una sola sesión, o si necesita herramientas que solo existen en tu máquina (una base de datos local, una VPN), conviene una sesión normal en la nube o local.</p>
+    <p>Los proyectos están pensados para trabajo que se extiende en el tiempo y genera tareas de forma continua, no para encargos puntuales.</p>
+    <p><strong>Mi análisis:</strong> lo que más me llama la atención es el cambio de rol: uno deja de decirle a Claude "hacé esto" para pasar a decirle "encargate de esto en general, y avisame cuando algo necesite mi ojo". Para alguien que programa solo, como yo, esto podría significar tener varias mejoras corriendo en paralelo sobre un mismo proyecto sin tener que estar pendiente de cada una constantemente, algo que hoy suena más a lujo de equipo grande que a herramienta de uso individual, pero que probablemente se vuelva normal más rápido de lo que pensamos.</p>
+    <p><strong><em>Fuente: Documentación de Claude Code, Anthropic</em></strong></p>
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today we&#39;re rolling out Projects in Claude Code on desktop and web.<br><br>A project is one conversation with Claude. It splits the work into threads itself, runs them as parallel cloud sessions, passes context between them, and keeps going when you leave.<br><br>In beta for select users. <a href="https://t.co/j4k7rludhV">pic.twitter.com/j4k7rludhV</a></p>&mdash; ClaudeDevs (@ClaudeDevs) <a href="https://x.com/ClaudeDevs/status/2100633571543367691?ref_src=twsrc%5Etfw">September 17, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+</article>
+
+<article class="blog-card">
+    <div class="autor">
+        <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva Ramos escribiendo" class="autor-foto">
+        <div>
+            <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+            <p class="autor-fecha">📅 18 de septiembre 2026</p>
+        </div>
+    </div>
+    <h3>⏱️ Cazando los 50 milisegundos que sumaban 10 segundos de espera</h3>
+    <img src="Visual-Studio.jpg" alt="Visual Studio" class="blog-img">
+    <p>Cualquiera que haya tratado de optimizar una app que se siente lenta sabe la trampa clásica: revisás el frontend, todo parece estar bien, y el problema en realidad está escondido en otro proceso que ni siquiera estabas mirando.</p> 
+    <p>Justin Yoo se topó justo con eso al investigar por qué su app de .NET (una especie de coach de entrevistas con IA) tardaba entre 1,5 y 2 minutos en responder.</p>
+    <p>La app tiene varias piezas trabajando juntas: una interfaz web en Blazor, un agente de IA, servidores MCP, una base de datos y un modelo de lenguaje.</p> 
+    <p>Cuando algo así se pone lento, el desafío no es arreglar el código, sino primero descubrir cuál de todas esas piezas es la culpable.</p> 
+    <p>Yoo armó un método paso a paso para rastrear el cuello de botella usando el analizador de rendimiento de Visual Studio.</p>
+    <p>Así fue el proceso de investigación:</p>
+    <p>Aislar el proceso correcto: en vez de perfilar todo el sistema junto, apagó la interfaz web dentro del orquestador y la volvió a levantar por separado, apuntándola manualmente al agente que seguía corriendo.</p> 
+    <p>Así logró un objetivo limpio para medir.</p>
+    <p>Leer el reporte de CPU con cuidado: el análisis mostró que la interfaz web solo usaba un 6.7% de CPU durante la espera.</p> 
+    <p>Es decir, la aplicación no estaba "trabajando" durante ese tiempo — estaba esperando algo.</p>
+    <p>Revisar el código con esa pista en mente: encontró una línea que pausaba 50 milisegundos cada vez que llegaba una actualización del streaming de respuesta.</p> 
+    <p>Sumado a lo largo de cientos de actualizaciones, ese pequeño retraso se acumulaba en varios segundos.</p>
+    <p>Medir en vez de asumir: en lugar de confiar solo en el perfilador (que no puede medir tiempos de espera tipo Task.Delay), agregó un cronómetro manual alrededor del bucle para capturar exactamente cuánto tiempo se iba en esas pausas.</p>
+    <p>Comparar con y sin el retraso: corrió la misma solicitud cinco veces con la pausa y cinco veces sin ella.</p> 
+    <p>Con la pausa, se acumulaban en promedio unos 10.3 segundos de espera artificial.</p> 
+    <p>Sin ella, el tiempo total de respuesta bajó de 84.7 a 77.3 segundos.</p>
+    <p>Usar un agente de IA como segunda opinión: le pidió al agente de perfilado de GitHub Copilot que revisara los mismos datos, y confirmó su interpretación — el tiempo perdido no era de procesamiento, era de espera pura.</p>
+    <p>El artículo aclara algo clave: la solución no es simplemente borrar la pausa sin más.</p> 
+    <p>Esa pausa probablemente existía para no saturar la interfaz con actualizaciones demasiado rápidas.</p> 
+    <p>La alternativa que propone es agrupar las actualizaciones visuales (renderizar como máximo una vez cada 50 ms) sin frenar la llegada de los datos en sí — así el streaming sigue fluido y la interfaz no se sobrecarga.</p>
+    <p><strong>Mi análisis:</strong>lo que más rescato de este caso no es la solución técnica en sí, sino el método: antes de tocar código, Yoo se hizo dos preguntas simples — ¿qué proceso es el responsable? y ¿está calculando o esperando? Es un recordatorio de que muchas veces "se siente lento" no significa "hay que optimizar el algoritmo", sino que hay una espera invisible escondida en algún lado. Y ese tipo de bug —una línea inocente de código copiada sin pensar demasiado— es exactamente el tipo de cosa que uno podría dejar pasar en un proyecto propio si no se toma el tiempo de medir en vez de asumir.</p>
+    <p><strong><em>Fuente: Justin Yoo, Microsoft (Visual Studio Blog)</em></strong></p>
+    
+</article>
+
+
+<article class="blog-card">
+    <div class="autor">
+        <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva Ramos escribiendo" class="autor-foto">
+        <div>
+            <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+            <p class="autor-fecha">📅 18 de septiembre 2026</p>
+        </div>
+    </div>
+    <h3>📋 Ahora podés instalar "habilidades" de IA directo desde Notion</h3>
+    <img src="Vercel__Zeit_.jpeg" alt="Vercel Zeit" class="blog-img">
+    <p>Cualquiera que haya intentado compartir una configuración o un flujo de trabajo de IA con su equipo sabe el problema: terminás mandando un repositorio de Git, un archivo suelto, o explicando por Slack cómo replicar algo que vos ya tenés armado.</p> 
+    <p>El equipo de Vercel (Andrew Qu, Jonathan Hefner y Ben Sabic) acaba de lanzar una actualización que ataca justo ese problema para un tipo de recurso que se usa cada vez más: las "habilidades" (skills) que le enseñan tareas reutilizables a un agente de IA.</p>
+    <p>La idea de fondo es simple: en vez de que una "habilidad" de agente viva únicamente en un repositorio de código, ahora puede vivir como una página común de Notion.</p> 
+    <p>Los equipos las escriben, las revisan y las actualizan en el mismo espacio donde ya organizan su trabajo, y desde ahí cualquier agente compatible las puede instalar — sin necesidad de tocar Git.</p>
+    <p>Así funciona en la práctica:</p>
+    <p>Explorar lo que tenés disponible: con el comando npx skills add notion, la terminal te muestra todos los paquetes de habilidades que tu equipo compartió con vos en Notion, listos para instalar.</p>
+    <p>Instalar una habilidad puntual: si solo querés una específica, pasás directamente el link de esa página de Notion con npx skills add <URL>.</p>
+    <p>Autenticación simple: ambos comandos se conectan a través de la CLI de Notion, que se configura con un par de líneas y un token de acceso personal.</p>
+    <p>Permisos ya resueltos: no hay que configurar nada extra de seguridad — si podés ver la página en Notion, podés instalar la habilidad; si no te la compartieron, ni te aparece.</p>
+    <p>El artículo aclara algo importante: esto no es un truco exclusivo de Vercel, sino que se apoya en una nueva API pública de Notion que convierte cualquier página en una carpeta de "habilidad de agente" con formato estándar.</p> 
+    <p>Eso significa que una habilidad guardada en Notion no sirve solo para esta herramienta puntual, sino que puede funcionar en cualquier agente de IA que sepa leer ese formato.</p>
+    <p>La alternativa que propone es agrupar las actualizaciones visuales (renderizar como máximo una vez cada 50 ms) sin frenar la llegada de los datos en sí — así el streaming sigue fluido y la interfaz no se sobrecarga.</p>
+    <p><strong>Mi análisis:</strong>lo que más me parece interesante acá es la tendencia de fondo, más que la herramienta en sí: cada vez hay más esfuerzo en hacer que "enseñarle algo a un agente de IA" sea tan fácil como escribir un documento, sin necesitar saber programar ni manejar Git.</p> 
+    <p>Esto abre la puerta a que gente de áreas no técnicas dentro de una empresa — marketing, soporte, ventas — pueda crear y compartir sus propios flujos de trabajo con IA, sin depender siempre de que alguien del equipo de desarrollo se los arme.</p>
+    <p><strong><em>Fuente: Andrew Qu, Jonathan Hefner y Ben Sabic, Vercel (Changelog)</em></strong></p>
+    
+</article>
+
+
        </div>
       </div>
     </section>
