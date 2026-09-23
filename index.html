@@ -37,7 +37,6 @@
                     <li><a href="#video-podcast">Video Podcast</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#privacidad">Privacidad</a></li>
-                    <li><a href="/en/index.html">🇪n Español</a></li>
                 </ul>
             </div>
            
@@ -65,6 +64,68 @@
       <div class="container">
        <h2>Mi Historia en el Mundo del Desarrollo Fullstack, como Programador y Desarrollador en formación y noticias sobre tecnología</h2>
        <div class="blog-grid">
+
+
+<article class="blog-card">
+        <div class="autor">
+            <img src="../carlos-villanueva-ramos.jpg" alt="Carlos Villanueva Ramos writing" class="autor-foto">
+            <div>
+                <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+                <p class="autor-fecha">📅 September 23, 2026</p>
+            </div>
+        </div>
+        <h3>🤖 Claude Opus 5.5: faster, cheaper and (according to Anthropic) safer than its predecessor</h3>
+        <img src="../Anthropic-Claude-Code.jpg" alt="Anthropic Claude Code" class="blog-img">
+        <p>Anyone who uses AI models for heavy-duty work knows the familiar tension: you want more power, but that usually means paying more and waiting longer.</p> 
+        <p>Anthropic has just launched Claude Opus 5.5, the first model in the 5.5 family, and what's most striking is that it promises to resolve that tension: it performs on par with Claude Fable 5.1 in most tasks, but costs 40% less to run than Opus 5.</p>
+        <p>This performance is noticeable in real-world tasks, not just benchmarks.</p>
+        <p>Anthropic focuses on concrete examples rather than isolated numbers.</p> <p>One evaluator used Opus 5.5 to migrate 680,000 lines of code in less than a day, something that would have taken an engineering team weeks.</p> 
+        <p>In another test, it was asked to reduce the loading times of an entire web application: it succeeded 39 out of 40 times, while Opus 5 only made minor adjustments that also altered the app's behavior.</p>
+        <p>In agent coding, the model leads the comparative tests against Opus 5 and also against competing models (GPT-6 Astra and GPT-5.6 Sol), although Anthropic clarifies something interesting: at this capacity level, benchmark score differences increasingly reflect less of the actual difference in daily usage.</p>
+        <p>Cheaper and Faster</p>
+        <p>The price figures are another major draw: entry tokens drop to $4 per million (previously $5) and exit tokens to $20 (previously $25), a 20% reduction.</p> <p>But the biggest leap is in cache reads, which represent the majority of spending on coding and agent jobs: they drop from $0.50 to $0.20 per million tokens, a 60% reduction.</p> 
+        <p>Furthermore, it generates responses more than 30% faster than Opus 5.</p>
+        <p>They also increased the usage limit to five hours on the Pro, Max, Team, and Enterprise plans, and you can now save the limit reset to use whenever you want.</p>
+        <p>Communication: Write differently, not just "better"</p>
+        <p>One of the changes Anthropic highlights most is in style: Opus 5.5 puts important information at the beginning, uses less jargon, and better adheres to the writing rules you request.</p> 
+        <p>A Rampa client summarized it this way: "It writes like a good colleague." This may sound minor, but in long work sessions, it makes a real difference when reviewing what the model produced.</p>
+        <p>Security: The most sensitive point of the announcement</p>
+        <p>Since Opus 5.5 is on par with Claude Mythos 5.1 in biology and cybersecurity, Anthropic decided to apply the same security measures as to Fable 5.1: most cybersecurity tasks are automatically redirected to an earlier model (Opus 4.8), and sensitive biological work requires the organization to be verified first.</p> 
+        <p>The company also acknowledges something striking: Opus 5.5 often "suspects" that it is being evaluated, which complicates measuring its actual behavior once it is in production.</p>
+        <p>Availability</p>
+        <p>It is now available on all platforms (AWS, Google Cloud, Microsoft Azure) and on the Claude Platform as claude-opus-5-5. Sonnet 5.5 and Haiku 5.5, with similar improvements, will be released in the coming weeks.</p>
+        <p><strong>My take:</strong> what interests me most here isn't that it's "more powerful"—that's always the claim—but that Anthropic is explicitly selling the cost-benefit ratio as its central argument, not raw intelligence. For someone just starting out like you, the most useful piece of information might be something else: if you ever program with AI, the decreasing cost of these models is precisely what makes tools like Claude Code increasingly accessible to individuals working alone, not just large teams with corporate budgets.</p>
+        <p><strong><em>Source: Anthropic's official announcement about Claude Opus 5.5</em></strong></p>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Introducing Claude Opus 5.5, the first model in our new Claude 5.5 family.<br><br>It performs at the level of Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5. <a href="https://t.co/Q9C2VKQ79f">pic.twitter.com/Q9C2VKQ79f</a></p>&mdash; Claude (@claudeai) <a href="https://x.com/claudeai/status/2102435511222890900?ref_src=twsrc%5Etfw">September 22, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+    </article>
+
+
+    <article class="blog-card">
+        <div class="autor">
+            <img src="../carlos-villanueva-ramos.jpg" alt="Carlos Villanueva Ramos writing" class="autor-foto">
+            <div>
+                <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+                <p class="autor-fecha">📅 September 18, 2026</p>
+            </div>
+        </div>
+        <h3>🤖 Projects in Claude Code: when running parallel coding tasks stops being your job</h3>
+        <img src="../Anthropic-Claude-Code.jpg" alt="Anthropic Claude Code" class="blog-img">
+        <p>Anyone who's juggled several coding tasks at once knows the drill: remembering where each one stood, repeating the same context every time you open a new session, and manually checking which one is done and which is still waiting on you.</p>
+        <p>Claude Code's documentation frames that manual coordination as exactly what its new "Projects" feature is meant to take off your plate.</p>
+        <p>The core idea is that Claude stops being just the one who executes a task, and becomes the one who coordinates several. Instead of opening one session per pending item, you drop everything into a single conversation — a bug report, a task list, a loose idea — and Claude decides what becomes a new "thread" (an independent cloud session) and which existing thread should handle it instead.</p>
+        <p>The documentation highlights a few ways this changes how you work:</p>
+        <p><strong>Shared context from day one:</strong> every new thread starts already loaded with the project's repos, instructions, and memory, so a rule you state once (which branch to target, say) automatically applies to all future work.</p>
+        <p><strong>Real parallel work:</strong> threads run simultaneously and keep going even after you close your laptop, and you can check in and reply to them from your phone.</p>
+        <p><strong>One control panel:</strong> the "Overview" tab shows at a glance which threads are ready for review, which are waiting on your approval, and which are still working, without opening each one individually.</p>
+        <p><strong>Memory that sticks:</strong> when you ask Claude to remember a decision or a recurring issue, that note gets saved and future threads already know it, no repeating required.</p>
+        <p><strong>You stay in control of what matters:</strong> you can ask Claude to propose threads and wait for your approval before starting them, to never open a pull request without showing you the plan first, or to cap how many threads run at once.</p>
+        <p>The documentation is clear about one thing: a project isn't meant for every task. If the work fits in a single session, or needs tools that only exist on your machine (a local database, a VPN), a regular cloud or local session is the better fit. Projects are built for work that stretches over time and keeps generating tasks on its own, not for one-off requests.</p>
+        <p><strong>My take:</strong> what stands out most to me is the shift in role: instead of telling Claude "do this," you start telling it "own this in general, and flag me when something needs my eyes." For someone coding solo, like me, that could mean running several improvements on the same project in parallel without babysitting each one — something that today sounds more like a large-team luxury than a solo tool, but will probably feel normal sooner than we think.</p>
+        <p><strong><em>Source: Claude Code documentation, Anthropic</em></strong></p>
+    </article>
+
+
+
 
 <article class="blog-card">
     <div class="autor">
