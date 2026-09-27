@@ -65,16 +65,74 @@
        <h2>Mi Historia en el Mundo del Desarrollo Fullstack, como Programador y Desarrollador en formación y noticias sobre tecnología</h2>
        <div class="blog-grid">
 
+
+
+         <article class="blog-card">
+     <div class="autor">
+    <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva" class="autor-foto">
+    <div>
+    <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+    <p class="autor-fecha">📅 26 de septiembre de 2026</p>
+    </div>
+    </div>
+    <h3>⚙️ Escalado automático vertical de pods en Kubernetes: De estimaciones ciegas al redimensionamiento in situ</h3>
+    <img src="Kubernetes-logo.png" alt="Kubernetes" class="blog-img">
+    <p>Contexto:</p> 
+    <p>Configurar correctamente las solicitudes (requests) y límites de CPU y memoria en Kubernetes suele ser una tarea basada en suposiciones iniciales que rara vez se actualizan.</p> 
+    <p>Si se establecen muy bajo, el pod sufre falta de recursos; si se configuran muy alto, se desperdicia capacidad costosa.</p>
+    <p>Mientras que el HPA (Horizontal Pod Autoscaler) añade más réplicas, el VPA (Vertical Pod Autoscaler) soluciona este problema ajustando automáticamente el tamaño exacto de los recursos según el uso real de cada contenedor.</p>
+    <p>Arquitectura y componentes principales:</p>
+    <p>El VPA opera mediante tres componentes clave distribuidos como un complemento opcional:</p>
+    <p>El Recomendador: Monitorea el uso histórico de CPU y memoria a través del Metrics Server y calcula las recomendaciones ideales, manteniéndose siempre dentro de los límites de minAllowed y maxAllowed.</p>
+    <p>El Actualizador: Compara los pods en ejecución con las recomendaciones del sistema.</p> 
+    <p>Si detecta una desviación significativa, decide si debe aplicar un cambio respetando los presupuestos de interrupción de pods (PodDisruptionBudgets).</p>
+    <p>El Controlador de Admisión: Un webhook mutable que intercepta la creación de nuevos pods para ajustar sus recursos antes de que se almacenen en etc.</p>
+    <p>Estrategias de actualización (Desalojo vs. In Situ):</p>
+    <p>Para aplicar los cambios, el VPA utiliza principalmente dos vías:</p>
+    <p>Desalojo y recreación tradicionales: Expulsa el pod actual para que el controlador cree uno nuevo con los recursos actualizados.</p> 
+    <p>Esto implica un reinicio, lo cual puede afectar el estado en memoria o los tiempos de calentamiento de aplicaciones complejas (como Java/Spring Boot).</p>
+    <p>Redimensionamiento in situ (InPlaceOrRecreate / InPlace): Una característica avanzada en Kubernetes que actualiza directamente los groups del contenedor en ejecución en el mismo modo, omitiendo al webhook y al programador, y evitando reinicios innecesarios.</p>
+    <p><strong>Mi opinión:</strong>El VPA es una herramienta indispensable para optimizar costos y rendimiento en clústeres modernos de Kubernetes, especialmente ahora con la consolidación del redimensionamiento in situ. Sin embargo, su implementación requiere precaución: es vital configurar correctamente los valores máximos (maxAllowed), empezar probando en modo Off para analizar métricas, y evitar combinarlo con HPA usando la misma métrica de CPU o memoria para prevenir conflictos operativos.</p>
+    <p><strong><em>Fuente: Arush Kumar / Medium</em></strong></p>
+   </article>
+
+
+        <article class="blog-card">
+     <div class="autor">
+    <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva" class="autor-foto">
+    <div>
+    <p class="autor-nombre">Carlos José Villanueva Ramos</p>
+    <p class="autor-fecha">📅 26 de septiembre de 2026</p>
+    </div>
+    </div>
+    <h3>⚠️ Fuga accidental: Agentes de IA de OpenAI suben imágenes de usuarios a servidores externos</h3>
+    <img src="api-openai.webp" alt="open ai" class="blog-img">
+    <p>Contexto:</p> 
+    <p>Garantizar que los agentes autónomos de inteligencia artificial operen dentro de límites seguros es uno de los mayores retos actuales para los desarrolladores de tecnología avanzada.</p> 
+    <p>OpenAI confirmó recientemente un incidente de seguridad en el que algunos de sus agentes de IA transmitieron y subieron accidentalmente imágenes proporcionadas por usuarios a servicios de alojamiento web de terceros.</p>
+    <p>Aunque la compañía aseguró que la gran mayoría de los usuarios no se vieron afectados, la investigación arrojó 53 casos específicos en los que imágenes de usuarios terminaron publicadas en internet como enlaces no listados.</p>
+    <p>Acciones correctivas y protección de datos:</p>
+    <p>Ante este comportamiento anómalo detectado tras una investigación interna, OpenAI implementó diversas medidas de contención:</p>
+    <p>Eliminación de contenido: La empresa colaboró de forma directa con los proveedores de alojamiento para borrar la mayor parte de las imágenes expuestas y continúa trabajando en la eliminación del resto.</p>
+    <p>Exclusión de cuentas protegidas: Se confirmó que los datos de cuentas empresariales, el uso de la API y aquellos usuarios que optaron por no participar en el entrenamiento no se vieron afectados.</p>
+    <p>Filtros de privacidad avanzados: Utilización de sistemas de anonimización para desvincular la información de las cuentas y eliminar datos personales antes de procesar cualquier dato válido para entrenamiento.</p>
+    <p>Reforzamiento de sistemas: Mejora en los procesos de evaluación y monitoreo continuo para evitar que los modelos filtren datos a través de servicios externos en el futuro.</p>
+    <p><strong>Mi opinión:</strong>Este incidente evidencia los riesgos latentes de los agentes autónomos con acceso a herramientas externas. Si bien la rápida respuesta de OpenAI y sus filtros de privacidad mitigan el impacto, la situación demuestra que la supervisión automatizada y las barreras de seguridad deben ser aún más estrictas a medida que la IA adquiere mayor autonomía operativa.</p>
+    <p><strong><em>Fuente: Autor: Mayank Parmar, bleepingcomputer</em></strong></p>
+   </article>
+
+
+
      <article class="blog-card">
      <div class="autor">
-    <img src="Carlos-Developer-Yankees.png" alt="Carlos Villanueva" class="autor-foto">
+    <img src="carlos-villanueva-ramos.jpg" alt="Carlos Villanueva" class="autor-foto">
     <div>
     <p class="autor-nombre">Carlos José Villanueva Ramos</p>
     <p class="autor-fecha">📅 26 de septiembre de 2026</p>
     </div>
     </div>
     <h3>🛠️ Barandillas en lugar de muros: Cómo Klaviyo lanzó 356 aplicaciones internas en dos semanas en Vercel</h3>
-    <img src="customer_story_card_og_card.jpg" alt="Klaviyo en Vercel" class="imagen-articulo">
+    <img src="customer_story_card_og_card.jpg" alt="Klaviyo en Vercel" class="blog-img">
     <p>Capacitar a equipos no técnicos para desarrollar software sin sacrificar la seguridad es uno de los mayores desafíos para las empresas modernas.</p> 
     <p>Klaviyo abordó este problema creando una plataforma interna dedicada en Vercel, lo que permitió a los empleados implementar cientos de aplicaciones funcionales en tiempo récord.</p>
     <p>En tan solo las dos primeras semanas, 512 desarrolladores implementaron 356 aplicaciones en producción, incluyendo aplicaciones full-stack conectadas directamente a las bases de datos corporativas, con equipos que abarcaban desde el departamento legal hasta el de marketing, implementando software sin problemas.</p>
