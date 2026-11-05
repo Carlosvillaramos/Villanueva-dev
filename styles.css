@@ -142,6 +142,7 @@ p {
   color: var(--accent);
 }
 
+
 .hamburger {
   display: none;
   font-size: 1.3rem;
@@ -149,10 +150,6 @@ p {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .menu { display: none; }
-  .hamburger { display: block; }
-}
 
 /* ============================================
    HERO
