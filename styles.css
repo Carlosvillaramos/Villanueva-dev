@@ -115,6 +115,8 @@ p {
   background-color: rgba(13, 17, 23, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: 10px;
 }
 
 .logo {
@@ -129,7 +131,9 @@ p {
 
 .menu ul {
   display: flex;
-  gap: 32px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .menu a {
@@ -142,13 +146,25 @@ p {
   color: var(--accent);
 }
 
-
 .hamburger {
   display: none;
   font-size: 1.3rem;
   color: var(--text);
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu ul {
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
 
 
 /* ============================================
